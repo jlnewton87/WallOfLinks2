@@ -7,11 +7,9 @@
   <div><button class="btn btn-default" id="open">Add Panel</button></div>
 </header>
 <div id="" class="page" ng-app="walloflinks" ng-controller="wallController">
-  <hr />
-  <div ng-repeat="panel in panels">
-    <div panel></div>
+  <div class="container-fluid" id='body'>
+    <div panel ng-repeat="panel in panels"></div>
   </div>
-    <hr />
 </div>
 
 <% include footer %>

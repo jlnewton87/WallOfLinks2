@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var model = require('../model/panel.js');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -8,7 +9,12 @@ router.get('/', function(req, res) {
 
 /* GET panels */
 router.get('/panels', function(req, res) {
-  res.end();
+  model.panel.find().exec(
+    function(err, panels){
+     if(err){ throw err }
+     res.send(panels); 
+    }
+  );
 });
 
 module.exports = router;
