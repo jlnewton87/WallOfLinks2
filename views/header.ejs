@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title><%- title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <% if (ENV_DEVELOPMENT) { %>
+    <script src="http://localhost:35729/livereload.js"></script>
+  <% } %>
+  <script src="/js/angular.js"></script>
+  <script src="/js/app/app.js"></script>
+  <script src="/js/services/dataService.js"></script>
+  <script src="/js/controllers/wall-controller.js"></script>
+  <script src="/js/directives/panel.js"></script>
+  <script src="/js/directives/link.js"></script>
+  <script src="/js/jquery-1.9.1.js"></script>
+  <script src="/js/bootstrap.js"></script>
+</head>
+<body>

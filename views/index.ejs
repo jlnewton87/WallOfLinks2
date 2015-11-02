@@ -1,0 +1,17 @@
+<% include header %>
+
+<header>
+  <div class="float-left">
+  <div ><span class="site-title2">Wall of&nbsp;</span><span class="site-title">Links</span></div>
+  </div>
+  <div><button class="btn btn-default" id="open">Add Panel</button></div>
+</header>
+<div id="" class="page" ng-app="walloflinks" ng-controller="wallController">
+  <hr />
+  <div ng-repeat="panel in panels">
+    <div panel></div>
+  </div>
+    <hr />
+</div>
+
+<% include footer %>
