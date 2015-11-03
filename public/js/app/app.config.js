@@ -3,9 +3,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/");
   
   $stateProvider
-    .state('state1', {
-      url: "/state1",
-      templateUrl: "partials/state1.html"
+    .state('app', {
+      url: "/",
+      templateUrl: "/templates/main.html",
+      controller: "WallController"
     })
-	//.state
+    
+    .state(
+      'app.addPanel', {
+        url: "/popup/add-panel",
+        templateUrl: "/templates/add-panel.html",
+        controller: ""
+      });
 });
