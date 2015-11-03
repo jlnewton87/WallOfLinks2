@@ -9,12 +9,25 @@ router.get('/', function(req, res) {
 
 /* GET panels */
 router.get('/panels', function(req, res) {
+  sendPanels(res);
+});
+
+/* Add Panel (GET) */
+router.get('/panels/add', function(req, res) {
+  var newPanel = new model.panel({title: "New Panel"});
+  newPanel.save(function(err, panels){
+    if(err) {console.log(err)}
+    sendPanels(res);
+  });
+});
+
+function sendPanels(response){
   model.panel.find().exec(
     function(err, panels){
      if(err){ throw err }
-     res.send(panels); 
+     response.send(panels); 
     }
   );
-});
+};
 
 module.exports = router;
