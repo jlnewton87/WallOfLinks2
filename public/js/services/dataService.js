@@ -1,4 +1,4 @@
-app.factory('dataService', function($http){
+app.factory('dataService', function($http, $state){
 	return {
 		getPanels: function getPanels(){
 			return $http.get('/panels')
@@ -17,6 +17,30 @@ app.factory('dataService', function($http){
 				.then(
 					function(response){
 						return response.data
+					}
+				)
+				.catch(function(err){
+					console.log(err);
+					throw err;	
+				});
+		},
+		removePanel: function(panelId){
+			return $http.delete('/panels/remove/' + panelId)
+				.then(
+					function(response){
+						$state.go('app');
+					}
+				)
+				.catch(function(err){
+					console.log(err);
+					throw err;	
+				});
+		},
+		updatePanel: function(panelObject){
+			return $http.post('/panels/update/', {data: panelObject})
+				.then(
+					function(response){
+						$state.go('app');
 					}
 				)
 				.catch(function(err){
