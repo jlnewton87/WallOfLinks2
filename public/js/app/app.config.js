@@ -9,10 +9,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: "WallController"
     })
     
-    .state(
-      'app.addPanel', {
-        url: "/popup/add-panel",
-        templateUrl: "/templates/add-panel.html",
-        controller: "NewPanelController"
-      });
 });
