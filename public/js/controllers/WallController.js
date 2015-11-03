@@ -1,9 +1,8 @@
 app.controller('WallController', ['$scope', '$state', 'dataService', function ($scope, $state, dataService){
-	dataService.getPanels()
-		.then(function(panels){
-			$scope.panels = panels;
-			$scope.showPopup = false;
-		});
+	
+	getPanels();
+	
+	$scope.updateWall = getPanels;
 	
 	$scope.addPanel = function(){
 		dataService.addPanel()
@@ -14,14 +13,22 @@ app.controller('WallController', ['$scope', '$state', 'dataService', function ($
 	};
 	
 	$scope.addLink = function(){
-		console.log();
+		$state.go('app.panel.addLink');
 	};
 	
 	$scope.editPanel = function(){
-		console.log();
+		$state.go('app.panel.editPanel');
 	};
 	
 	$scope.removePanel = function(){
-		$state.go('app.removePanel');
+		$state.go('app.panel.removePanel');
 	};
+	
+	function getPanels(){
+		dataService.getPanels()
+			.then(function(panels){
+				$scope.panels = panels;
+				$scope.showPopup = false;
+			});	
+	}
 }]);

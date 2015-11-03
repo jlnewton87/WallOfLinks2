@@ -9,10 +9,21 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: "WallController"
     })
     
-    .state('app.removePanel', {
-      url: "panels/remove/:id",
-      templateUrl: "/templates/remove-panel.html",
-      controller: "PanelController"
+    .state('app.panel', {
+      url: "panels/:id/",
+      controller: "PanelController",
+      template: "<div ui-view/>",
+      abstract: true
+    })
+    
+    .state('app.panel.removePanel', {
+      url: "remove/",
+      templateUrl: "/templates/remove-panel.html"
+    })
+    
+    .state('app.panel.editPanel', {
+      url:"edit/",
+      templateUrl: "/templates/edit-panel.html"
     })
     
 });
