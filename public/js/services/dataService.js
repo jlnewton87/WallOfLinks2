@@ -12,6 +12,7 @@ app.factory('dataService', function($http, $state){
 					throw err;
 				});
 		},
+		
 		addPanel: function(){
 			return $http.get('/panels/add')
 				.then(
@@ -24,6 +25,7 @@ app.factory('dataService', function($http, $state){
 					throw err;	
 				});
 		},
+		
 		removePanel: function(panelId){
 			return $http.delete('/panels/remove/' + panelId)
 				.then(
@@ -36,11 +38,15 @@ app.factory('dataService', function($http, $state){
 					throw err;	
 				});
 		},
-		updatePanel: function(panelObject){
+		
+		updatePanel: function(panelObject, refresh){
 			return $http.post('/panels/update/', {data: panelObject})
 				.then(
 					function(response){
-						$state.go('app');
+						if(refresh)
+						{
+							$state.go('app');
+						}
 					}
 				)
 				.catch(function(err){

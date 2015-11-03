@@ -12,8 +12,14 @@ app.controller('PanelController', ['$scope', '$state', '$stateParams', 'dataServ
 	
 	$scope.editPanel = function(){
 		dataService
-			.updatePanel($scope.currentPanel)
+			.updatePanel($scope.currentPanel, true)
 			.then($scope.$parent.updateWall());
+	}
+	
+	$scope.addLink = function(){
+		$scope.currentPanel.links.push({text: '', url: '', order: 0});
+		dataService
+			.updatePanel($scope.currentPanel, false)
 	}
 	
 	//used for all app states

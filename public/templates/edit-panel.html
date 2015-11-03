@@ -13,6 +13,7 @@
 					<label for="name">Title:</label>
 					<input type="text" id="name" ng-model="currentPanel.title" />
 				</div>
+				<button class="btn btn-success" ng-click="addLink()">Add Link</button>
 				<table class="table table-hover">
 					<thead>
 						<td>Text</td>
@@ -31,7 +32,7 @@
 							<td>
 								<input type="text" class="order-input" ng-model="link.order" />
 							</td>
-							<td class="edit-form-delete"><span class="glyphicon glyphicon-trash"><div style="display:none" data-bind="text: text + href"></div></span></td>
+							<td class="edit-form-delete"><span class="glyphicon glyphicon-trash" ng-click="removeLink(link.text)"></span></td>
 						</tr>
 					</tbody>
 				</table>
