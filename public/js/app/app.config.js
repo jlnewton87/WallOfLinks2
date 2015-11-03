@@ -10,7 +10,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     })
     
     .state('app.removePanel', {
-      url: "/panels/remove/:id",
+      url: "panels/remove/:id",
       templateUrl: "/templates/remove-panel.html",
       controller: "PanelController"
     })
