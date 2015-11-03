@@ -13,6 +13,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       'app.addPanel', {
         url: "/popup/add-panel",
         templateUrl: "/templates/add-panel.html",
-        controller: ""
+        controller: "NewPanelController"
       });
 });
