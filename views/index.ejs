@@ -1,4 +1,4 @@
-<% include header %>
+<% include header %><%# angular app directive in header %>
 
 <header>
   <div class="float-left">
@@ -6,7 +6,7 @@
   </div>
   <div><button class="btn btn-default" id="open">Add Panel</button></div>
 </header>
-<div id="" class="page" ng-app="walloflinks" ng-controller="wallController">
+<div id="" class="page" ng-controller="wallController">
   <div class="container-fluid" id='body'>
     <div panel ng-repeat="panel in panels"></div>
   </div>
