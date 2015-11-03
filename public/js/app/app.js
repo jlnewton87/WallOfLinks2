@@ -1,1 +1,1 @@
-var app = angular.module('walloflinks', []);
+var app = angular.module('walloflinks', ['ui.router']);
