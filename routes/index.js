@@ -22,10 +22,11 @@ router.get('/panels/add', function(req, res) {
 });
 
 function sendPanels(response){
+  console.log('sending panels');
   model.panel.find().exec(
     function(err, panels){
      if(err){ throw err }
-     response.send(panels); 
+      response.send(panels); 
     }
   );
 };

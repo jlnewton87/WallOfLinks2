@@ -1,2 +1,12 @@
-<div panel ng-repeat="panel in panels"></div>
-<div ng-if="showPopup" ui-view></div>
+<header>
+  <div class="float-left">
+  <div ><span class="site-title2">Wall of&nbsp;</span><span class="site-title">Links</span></div>
+  </div>
+  <div><button class="btn btn-default" ng-click="addPanel()">Add Panel</button></div>
+</header>
+<div id="" class="page">
+  <div class="container-fluid" id='body'>
+    <div panel ng-repeat="panel in panels"></div>
+	<div ng-if="showPopup" ui-view></div>
+  </div>
+</div>
