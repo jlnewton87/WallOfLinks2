@@ -19,7 +19,7 @@
 	</div>
 	<div class="panel-body">
 		<ul style="display: block">
-			<li ng-repeat="link in panel.links" class="panel-link"><span link></span></li>
+			<li ng-repeat="link in panel.links | orderBy: 'order'" class="panel-link"><span link></span></li>
 		</ul>
 	</div>
 </div>

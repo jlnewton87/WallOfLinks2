@@ -6,7 +6,7 @@
 </header>
 <div id="" class="page">
   <div class="container-fluid" id='body'>
-    <div panel ng-repeat="panel in panels"></div>
+    <div panel ng-repeat="panel in panels | orderBy: 'order'"></div>
 	<div ui-view></div>
   </div>
 </div>
